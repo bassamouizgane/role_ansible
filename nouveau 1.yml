@@ -1,0 +1,17 @@
+- name: create files to test
+  hosts: nodes
+  become : true
+  vars:
+    ansible_sudo_pass: admin
+    ansible_user: admin
+    ansible_password: admin
+  
+  tasks:
+    - name: Touch a file, using symbolic modes to set the permissions
+	  file:
+        path: /home/admin/{{ item }}
+        state: touch
+      loop:
+          - fa.txt
+          - fo.txt
+          - fi.txt

@@ -1,0 +1,4 @@
+group_vars/nodes.yml
+
+ansible_user: admin
+ansible_password: admin

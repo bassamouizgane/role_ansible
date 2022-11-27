@@ -1,0 +1,11 @@
+- name: Copy file to test
+  hosts: nodes
+  become : true
+  vars:
+    ansible_sudo_pass: admin
+  
+  tasks:
+   - name: la copie des fichier
+     copy:
+       src: /home/admin/bisso/text.txt
+       dest: /home/admin/bisso1
